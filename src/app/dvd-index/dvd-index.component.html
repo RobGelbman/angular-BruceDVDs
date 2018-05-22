@@ -1,0 +1,7 @@
+<h1> DVD list </h1>
+    <div>
+      <div *ngFor="let dvd of dvds">
+        <!-- <h3> {{ dvd.location }} </h3> -->
+        <p> {{ dvd.dvdDate}} - {{dvd.dvdLocation.venue}} - {{dvd.dvdLocation.city}} - {{dvd.dvdLocation.state}} </p>
+      </div>
+    </div>
