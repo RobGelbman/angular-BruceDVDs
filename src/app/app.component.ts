@@ -20,7 +20,7 @@ export class AppComponent {
   constructor(private session: SessionService) { }
 
   login() {
-    this.session.login(this.formInfo)
+    this.session.login(this.formInfo)    
       .subscribe(
         (user) => this.user = user,
         (err) => this.error = err

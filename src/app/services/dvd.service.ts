@@ -17,8 +17,18 @@ export class DvdService {
       .map((res) => res.json());
   }
 
-  get(id) {
-    return this.http.get(`${environment.BASE_URL}/api/dvds/${id}`)
+  getCount() {
+    return this.http.get(`${environment.BASE_URL}/api/dvds/count`)
+      .map((res) => res.json());
+  }
+
+  getPage(pageSize, currentPage){
+    return this.http.get(`${environment.BASE_URL}/api/dvds/limit/${pageSize}/page/${currentPage}`)
+      .map((res) => res.json());
+  }
+
+  getDetails(id) {
+    return this.http.get(`${environment.BASE_URL}/api/dvdDetail/${id}`)
       .map((res) => res.json());
   }
 

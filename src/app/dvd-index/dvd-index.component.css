@@ -1,0 +1,11 @@
+.custom-pagination /deep/ .current{
+  background: black !important;
+}
+
+.dvd-list-title__active{
+color: blue;
+}
+
+.dvd-list__version p{
+  color: red;
+}

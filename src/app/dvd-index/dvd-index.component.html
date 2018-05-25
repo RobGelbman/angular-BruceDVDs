@@ -1,7 +1,26 @@
 <h1> DVD list </h1>
-    <div>
-      <div *ngFor="let dvd of dvds">
-        <!-- <h3> {{ dvd.location }} </h3> -->
-        <p> {{ dvd.dvdDate}} - {{dvd.dvdLocation.venue}} - {{dvd.dvdLocation.city}} - {{dvd.dvdLocation.state}} </p>
+
+<div class="columns">
+  
+  <div class="column">
+    <a [routerLink]="" (click)="setItemsPerPage(10)">10</a> |
+      <a [routerLink]="" (click)="setItemsPerPage(25)">25</a> |
+        <a [routerLink]="" (click)="setItemsPerPage(50)">50</a>
+  </div>
+</div>
+    
+      <div class="custom-pagination" *ngFor="let dvd of dvds | paginate: config">
+        <h3 *ngIf = firstTime(dvd.dvdType)>{{dvd.dvdType}}</h3>
+        <p *ngIf = !formatWithDate(dvd.dvdType) class="dvd-list__title" [ngClass]="{'dvd-list-title__active' : dvd.isOpen}" (click)="showVersions(dvd)">{{dvd.dvdLocation.venue}} - Number of Versions: {{dvd.version.length}}</p>
+        <p *ngIf = formatWithDate(dvd.dvdType) class="dvd-list__title" [ngClass]="{'dvd-list-title__active' : dvd.isOpen}" (click)="showVersions(dvd)">{{ dvd.dvdDate}} - {{dvd.dvdLocation.venue}} - {{dvd.dvdLocation.city}} - {{dvd.dvdLocation.state}} - Number of Versions: {{dvd.version.length}} </p>
+        <div class="dvd-list__version" [hidden]="!dvd.isOpen">
+          <p *ngFor="let version of dvd.version"><a href="/dvdDetail/{{version.detailId}}">View DVD</a>{{version.name}} - {{version.summary}}</p>
+          
+        </div>
       </div>
-    </div>
+
+<div class="has-text-centered">
+  <pagination-controls [id]="config.id" [maxSize]="maxSize" [directionLinks]="directionLinks" [autoHide]="autoHide" [previousLabel]="labels.previousLabel"
+    [nextLabel]="labels.nextLabel" [screenReaderPaginationLabel]="labels.screenReaderPaginationLabel" [screenReaderPageLabel]="labels.screenReaderPageLabel"
+    [screenReaderCurrentLabel]="labels.screenReaderCurrentLabel" (pageChange)="onPageChange($event)"></pagination-controls>
+</div>

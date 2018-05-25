@@ -1,0 +1,36 @@
+<div *ngFor="let details of selectedDvd">
+  <div *ngIf="details.version[0].coverArt === true">
+    <img src="/assets/images/covers/{{details.version[0].detailId}}.jpg">
+  </div>
+    <p>Name: {{details.version[0].name}}</p>
+    <p>Number of Discs: {{details.version[0].tracklist.length}}</p>
+    <p>Format: {{details.version[0].format}}</p>
+    <p>Audio: {{details.version[0].audio}}</p>
+    <p>Video: {{details.version[0].video}}</p>
+    <p>Generation: {{details.version[0].generation}}</p>
+    <p>Chapters: {{details.version[0].chapters}}</p>
+    <p>Menu: {{details.version[0].menu}}</p>
+    <p>Rating: {{details.version[0].rating}}</p>
+    <p>Description: {{details.version[0].description}}</p>
+  <div *ngFor="let capture of details.version[0].capture">
+    <img src="/assets/images/capture/{{capture.filename}}">
+    <p>{{capture.caption}}</p>
+  </div>
+  <div *ngFor="let currentDvd of details.version[0].tracklist">
+    <p>DVD {{currentDvd.dvd}}</p>
+    <div *ngFor="let song of currentDvd.songlist">
+      <p>{{song}}</p>
+    </div>
+  </div>
+  <div *ngIf="details.version[0].coverArt === true">
+
+      <img src="/assets/images/fullArtwork/{{details.version[0].detailId}}.jpg">
+      <div *ngIf="details.version[0].detailId === 2">
+          <img src="/assets/images/fullArtwork/2b.jpg">
+          <img src="/assets/images/fullArtwork/2c.jpg">
+          <img src="/assets/images/fullArtwork/2d.jpg">
+
+      </div>
+    </div>
+
+</div>
