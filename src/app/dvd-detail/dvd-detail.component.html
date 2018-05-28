@@ -19,7 +19,7 @@
   <div *ngFor="let currentDvd of details.version[0].tracklist">
     <p>DVD {{currentDvd.dvd}}</p>
     <div *ngFor="let song of currentDvd.songlist">
-      <p>{{song}}</p>
+      <p class="songs">{{song}}</p>
     </div>
   </div>
   <div *ngIf="details.version[0].coverArt === true">
@@ -34,3 +34,4 @@
     </div>
 
 </div>
+<!-- <app-comment-form></app-comment-form> -->

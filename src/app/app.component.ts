@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SessionService } from "./services/session.service";
 import { Observable } from 'rxjs/Rx';
 
@@ -17,20 +17,34 @@ export class AppComponent {
   user: any;
   error: string;
 
-  constructor(private session: SessionService) { }
-
+  constructor(private session: SessionService) {}
+  
   login() {
-    this.session.login(this.formInfo)    
+    this.session.login(this.formInfo)      
       .subscribe(
-        (user) => this.user = user,
-        (err) => this.error = err
+        (user) => this.successCb(user),
+        (err) => this.errorCb(err)
       );
+    
+    this.formInfo.username ="";
+    this.formInfo.password ="";
   }
 
   signup() {
     this.session.signup(this.formInfo)
       .subscribe(
-        (user) => this.user = user,
+        (user) => this.successCb(user),
+        (err) => this.errorCb(err)
+      );
+
+    this.formInfo.username ="";
+    this.formInfo.password ="";
+  }
+
+  logout() {
+    this.session.logout()
+      .subscribe(
+        () => this.user = null,
         (err) => this.error = err
       );
   }

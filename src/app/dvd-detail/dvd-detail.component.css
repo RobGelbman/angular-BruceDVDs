@@ -1,0 +1,9 @@
+@font-face {
+  font-family: bruceWriting;
+  src: url(../../assets/fonts/BruceWriting.ttf);
+}
+
+.songs{
+  font-family: 'bruceWriting';
+  font-size: 3vh;
+}

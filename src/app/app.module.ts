@@ -9,7 +9,10 @@ import { DvdIndexComponent } from './dvd-index/dvd-index.component';
 import { AppComponent } from './app.component';
 import { SessionService } from "./services/session.service";
 import { DvdService } from "./services/dvd.service";
+import { CommentService } from "./services/comment.service";
 import { DvdDetailComponent } from './dvd-detail/dvd-detail.component';
+import { CommentFormComponent } from './comment-form/comment-form.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -17,7 +20,9 @@ import { DvdDetailComponent } from './dvd-detail/dvd-detail.component';
   declarations: [
     AppComponent,
     DvdIndexComponent,
-    DvdDetailComponent
+    DvdDetailComponent,
+    CommentFormComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,7 @@ import { DvdDetailComponent } from './dvd-detail/dvd-detail.component';
     NgxPaginationModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [SessionService, DvdService],
+  providers: [SessionService, DvdService, CommentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

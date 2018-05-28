@@ -19,10 +19,13 @@ export class DvdDetailComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(dvdDetails => {
+      
       this.dvd
         .getDetails(dvdDetails.id)
         .subscribe(oneDvd => {
           this.selectedDvd = oneDvd;
+          sessionStorage.setItem("currentDVD", JSON.stringify(dvdDetails.id))
+          console.log(this.selectedDvd)
         });
     });
   }

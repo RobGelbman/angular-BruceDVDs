@@ -15,7 +15,7 @@ export class DvdIndexComponent implements OnInit {
   
 
   public filter: string = '';
-  public maxSize: number = 5;
+  public maxSize: number = 7;
   public directionLinks: boolean = true;
   public autoHide: boolean = true;
   public config: PaginationInstance = {
@@ -52,13 +52,13 @@ export class DvdIndexComponent implements OnInit {
   }
 
   firstTime(type:string):boolean{
-    if (this.currentDvdType === type){
+    // if (this.currentDvdType === type){
       return false;
-    }
+    // }
     // setTimeout(() => {
-    this.currentDvdType = type;
+    // this.currentDvdType = type;
   // });
-    return true;
+    // return true;
   }
 
   formatWithDate(type:string):boolean{
@@ -81,6 +81,5 @@ export class DvdIndexComponent implements OnInit {
     }
     dvd.isOpen = !dvd.isOpen;
     this.currentDvdType = "";
-    console.log("IN SHOW VERSION", dvd)
   }
 }

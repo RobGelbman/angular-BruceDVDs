@@ -1,0 +1,14 @@
+<h1> Comment Form </h1>
+<form>
+  <!-- <label> Username </label>
+  <input type="text" [(ngModel)]="commentForm.username" name="username"/> -->
+  <br> <label> Comment </label>
+  <input type="text" [(ngModel)]="commentForm.comment" name="comment"/>
+  <!-- <br> <label> DetailId </label>
+  <input type="text" [(ngModel)]="formInfo.detailId" name="detailId"/> -->
+  <br> <br>
+  
+
+  <button (click)="submitComment()"> Submit </button>
+</form>
+<p class="error"> {{ error }} </p>
