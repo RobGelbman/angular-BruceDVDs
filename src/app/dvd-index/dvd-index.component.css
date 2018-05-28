@@ -1,11 +1,63 @@
-.custom-pagination /deep/ .current{
-  background: black !important;
+.index{
+  text-align: center;
+  
+  
+}
+
+.dvd-per-page{
+  margin-right: 5px;
+  padding: 0 2px;
+  border-radius: 25px;
+}
+
+.dvd-list__title{
+  cursor: pointer;
+  display:inline-block;
+  padding: 5px;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+
 }
 
 .dvd-list-title__active{
-color: blue;
+  border: 1px solid white;
+  font-size: 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .dvd-list__version p{
-  color: red;
+  color: lightgrey;
+  font-size: 14px;
+  text-align: center;
+  padding-bottom: 5px;
+  margin: 15px 0;
+}
+
+
+
+h1{
+  font-family: 'adler';
+}
+
+h3{
+  font-family: 'bruceWriting';
+}
+
+a{
+  background-color:lightgrey;
+  color: black;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 4px;
+  border: 2px solid darkgray;
+}
+
+a:hover{
+  background-color:white;
+  
+}
+
+p{
+  margin: 4px 0;
 }

@@ -1,4 +1,4 @@
-<div *ngFor="let details of selectedDvd">
+<div class="detail-page" *ngFor="let details of selectedDvd">
   <div *ngIf="details.version[0].coverArt === true">
     <img src="/assets/images/covers/{{details.version[0].detailId}}.jpg">
   </div>
@@ -13,7 +13,7 @@
     <p>Rating: {{details.version[0].rating}}</p>
     <p>Description: {{details.version[0].description}}</p>
   <div *ngFor="let capture of details.version[0].capture">
-    <img src="/assets/images/capture/{{capture.filename}}">
+    <img class="capture" src="/assets/images/capture/{{capture.filename}}">
     <p>{{capture.caption}}</p>
   </div>
   <div *ngFor="let currentDvd of details.version[0].tracklist">

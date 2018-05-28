@@ -1,21 +1,25 @@
+<div class="index">
 <h1> DVD list </h1>
 
 <div class="columns">
   
   <div class="column">
-    <a [routerLink]="" (click)="setItemsPerPage(10)">10</a> |
-      <a [routerLink]="" (click)="setItemsPerPage(25)">25</a> |
-        <a [routerLink]="" (click)="setItemsPerPage(50)">50</a>
+    Show: 
+    <a class="dvd-per-page" [routerLink]="" (click)="setItemsPerPage(10)">10</a> 
+      <a class="dvd-per-page" [routerLink]="" (click)="setItemsPerPage(25)">25</a> 
+        <a class="dvd-per-page" [routerLink]="" (click)="setItemsPerPage(50)">50</a>
+        per Page
   </div>
 </div>
     
       <div class="custom-pagination" *ngFor="let dvd of dvds | paginate: config">
         <h3 *ngIf = firstTime(dvd.dvdType)>{{dvd.dvdType}}</h3>
-        <p *ngIf = !formatWithDate(dvd.dvdType) class="dvd-list__title" [ngClass]="{'dvd-list-title__active' : dvd.isOpen}" (click)="showVersions(dvd)">{{dvd.dvdLocation.venue}} - Number of Versions: {{dvd.version.length}}</p>
-        <p *ngIf = formatWithDate(dvd.dvdType) class="dvd-list__title" [ngClass]="{'dvd-list-title__active' : dvd.isOpen}" (click)="showVersions(dvd)">{{ dvd.dvdDate}} - {{dvd.dvdLocation.venue}} - {{dvd.dvdLocation.city}} - {{dvd.dvdLocation.state}} - Number of Versions: {{dvd.version.length}} </p>
-        <div class="dvd-list__version" [hidden]="!dvd.isOpen">
-          <p *ngFor="let version of dvd.version"><a href="/dvdDetail/{{version.detailId}}">View DVD</a>{{version.name}} - {{version.summary}}</p>
-          
+        <div class="dvd-list__title" [ngClass]="{'dvd-list-title__active' : dvd.isOpen}" (click)="showVersions(dvd)">
+        <p *ngIf = !formatWithDate(dvd.dvdType) >{{dvd.dvdLocation.venue}}</p>
+        <p *ngIf = formatWithDate(dvd.dvdType)>{{ dvd.dvdDate}} - {{dvd.dvdLocation.venue}} - {{dvd.dvdLocation.city}} - {{dvd.dvdLocation.state}} </p>
+          <div class="dvd-list__version" [hidden]="!dvd.isOpen">
+            <p *ngFor="let version of dvd.version"><a href="/dvdDetail/{{version.detailId}}">{{version.name}} * {{version.summary}}</a></p>
+          </div>  
         </div>
       </div>
 
@@ -23,4 +27,5 @@
   <pagination-controls [id]="config.id" [maxSize]="maxSize" [directionLinks]="directionLinks" [autoHide]="autoHide" [previousLabel]="labels.previousLabel"
     [nextLabel]="labels.nextLabel" [screenReaderPaginationLabel]="labels.screenReaderPaginationLabel" [screenReaderPageLabel]="labels.screenReaderPageLabel"
     [screenReaderCurrentLabel]="labels.screenReaderCurrentLabel" (pageChange)="onPageChange($event)"></pagination-controls>
+</div>
 </div>

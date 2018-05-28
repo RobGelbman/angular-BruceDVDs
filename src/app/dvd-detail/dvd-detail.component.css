@@ -1,9 +1,19 @@
-@font-face {
+/* @font-face {
   font-family: bruceWriting;
   src: url(../../assets/fonts/BruceWriting.ttf);
+} */
+
+/* *{
+  font-family: 'adler';
+} */
+/* .detail-page{
+  width: 100%;
+} */
+.songs{
+  font-family: 'adler';
+  font-size: 3vh;
 }
 
-.songs{
-  font-family: 'bruceWriting';
-  font-size: 3vh;
+.capture{
+  border: 1px solid white;
 }

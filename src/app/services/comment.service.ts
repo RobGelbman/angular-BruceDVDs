@@ -10,6 +10,7 @@ import { environment } from '../../environments/environment'
 })
 export class CommentService {
   currentComment: any;
+  comments: any;
 
   constructor(private http: Http) { }
 
@@ -19,6 +20,12 @@ export class CommentService {
 
   postComment(comment) {
     return this.currentComment = this.http.post(`${environment.BASE_URL}/comments/submitComment`, comment, )
+    .map(res => res.json())
+    .catch(this.handleError);
+  }
+
+  getComments(id) {
+    return this.comments = this.http.get(`${environment.BASE_URL}/comments/${id}`)
     .map(res => res.json())
     .catch(this.handleError);
   }

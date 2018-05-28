@@ -17,21 +17,26 @@ export class CommentFormComponent implements OnInit {
   };
   currentDVD: number;
   error: string;
+  comments: any;
 
   constructor(private comment: CommentService) { }  
 
   ngOnInit() {
-    
+    this.user = JSON.parse(sessionStorage.getItem('mySession'));
+    this.currentDVD = Number(JSON.parse(sessionStorage.getItem('currentDVD')))
+    this.comment.getComments(this.currentDVD)
+      .subscribe((comments) => {
+        this.comments = comments;
+      });
   }
 
   submitComment(){ 
-    this.user = JSON.parse(sessionStorage.getItem('mySession'));
-    this.currentDVD = Number(JSON.parse(sessionStorage.getItem('currentDVD')))
+    
     if(this.user !== null){
       this.commentForm.currentDVD = this.currentDVD
-    this.commentForm.userId = this.user._id;
-    this.commentForm.username = this.user.username; 
-    this.commentForm.userId
+      this.commentForm.userId = this.user._id;
+      this.commentForm.username = this.user.username; 
+      this.commentForm.userId
       this.comment.postComment(this.commentForm)
         .subscribe(
           (user) => this.successCb(user),

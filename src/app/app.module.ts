@@ -13,6 +13,7 @@ import { CommentService } from "./services/comment.service";
 import { DvdDetailComponent } from './dvd-detail/dvd-detail.component';
 import { CommentFormComponent } from './comment-form/comment-form.component';
 import { HomeComponent } from './home/home.component';
+import { LoginSignupComponent } from './login-signup/login-signup.component';
 
 
 
@@ -22,7 +23,8 @@ import { HomeComponent } from './home/home.component';
     DvdIndexComponent,
     DvdDetailComponent,
     CommentFormComponent,
-    HomeComponent
+    HomeComponent,
+    LoginSignupComponent
   ],
   imports: [
     BrowserModule,

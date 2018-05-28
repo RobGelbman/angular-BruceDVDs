@@ -52,13 +52,11 @@ export class DvdIndexComponent implements OnInit {
   }
 
   firstTime(type:string):boolean{
-    // if (this.currentDvdType === type){
+    if (this.currentDvdType === type){
       return false;
-    // }
-    // setTimeout(() => {
-    // this.currentDvdType = type;
-  // });
-    // return true;
+    }
+    this.currentDvdType = type;
+    return true;
   }
 
   formatWithDate(type:string):boolean{

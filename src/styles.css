@@ -1,4 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
-.ngx-pagination .current{
-  background: black !important;
+@font-face {
+  font-family: bruceWriting;
+  src: url(/assets/fonts/BruceWriting.ttf);
 }
+
+@font-face {
+  font-family: adler;
+  src: url(/assets/fonts/Adler.ttf);
+}
+
+.ngx-pagination .current{
+  background-color:lightgrey !important;
+  color: black !important;
+  border-radius: 25px;
+  border: 2px solid darkgray;
+  margin: 0 5px;
+}
+
+.ngx-pagination a{
+  background: black !important;
+  color: white !important;
+  border-radius: 25px !important;
+  border: 2px solid darkgray;
+  margin: 0 5px;
+}
+
+.ngx-pagination a:focus{
+  outline:none;
+}
+
+/* .ngx-pagination li span{
+  border-radius: 25px !important;
+} */
+
+.ngx-pagination .disabled{
+  color: rgb(75, 68, 68) !important;
+}
+
+body{
+  background-color: black;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  background: url("assets/images/backgrounds/1X2IUFx.jpg") no-repeat right center fixed;
+  background-size: cover;
+}
+
