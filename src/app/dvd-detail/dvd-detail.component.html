@@ -1,35 +1,78 @@
-<div class="detail-page" *ngFor="let details of selectedDvd">
-  <div *ngIf="details.version[0].coverArt === true">
-    <img src="/assets/images/covers/{{details.version[0].detailId}}.jpg">
+<div class="container justify-content-start" *ngFor="let details of selectedDvd">
+      <div class="d-flex flex-row justify-content-start" >
+        <div class="cover-art-container" *ngIf="details.version[0].coverArt === true">
+          <img class="cover-art" src="/assets/images/covers/{{details.version[0].detailId}}.jpg">
+        </div>
+        <div class="detail-column col-5">
+          <h2>{{details.version[0].name}}</h2>
+          <p>{{details.version[0].tracklist.length}} DVD</p>
+          <p>Format: {{details.version[0].format}}</p>
+          <p>Audio: {{details.version[0].audio}}</p>
+          <p>Video: {{details.version[0].video}}</p>
+          <p>Generation: {{details.version[0].generation}}</p>
+          <p>Chapters: {{details.version[0].chapters}}</p>
+          <p>Menu: {{details.version[0].menu}}</p>
+          <p>Rating: {{details.version[0].rating}}</p>
+        </div>
+        <!-- <div class="col-4"></div> -->
+      </div>
+
+  <div class="capture-container text-center col-10">
+      <h3>Description</h3>
+        <div >    
+          
+            <p>{{details.version[0].description}}</p>
+          </div>
+       
   </div>
-    <p>Name: {{details.version[0].name}}</p>
-    <p>Number of Discs: {{details.version[0].tracklist.length}}</p>
-    <p>Format: {{details.version[0].format}}</p>
-    <p>Audio: {{details.version[0].audio}}</p>
-    <p>Video: {{details.version[0].video}}</p>
-    <p>Generation: {{details.version[0].generation}}</p>
-    <p>Chapters: {{details.version[0].chapters}}</p>
-    <p>Menu: {{details.version[0].menu}}</p>
-    <p>Rating: {{details.version[0].rating}}</p>
-    <p>Description: {{details.version[0].description}}</p>
-  <div *ngFor="let capture of details.version[0].capture">
-    <img class="capture" src="/assets/images/capture/{{capture.filename}}">
-    <p>{{capture.caption}}</p>
-  </div>
+
+<div class="capture-container text-center col-10">
+  <h3>Screen Captures</h3>
+    <div class="d-flex flex-wrap justify-content-around text-center">    
+      <div *ngFor="let capture of details.version[0].capture">
+        <img class="capture" src="/assets/images/capture/{{capture.filename}}">
+        <p>{{capture.caption}}</p>
+      </div>
+    </div>
+</div>
+<div id="accordion" class="text-center col-10 mt-5 mlr-0 p-0">
   <div *ngFor="let currentDvd of details.version[0].tracklist">
-    <p>DVD {{currentDvd.dvd}}</p>
+      <div class="card custom-tracklisting-label">
+          <div class="card-header pt-2 pb-0" id="heading_{{currentDvd.dvd}}">
+            <h3>
+              <button class="btn btn-link" data-toggle="collapse" attr.data-target="#collapse_{{currentDvd.dvd}}" aria-expanded="true" attr.aria-controls="collapse_{{currentDvd.dvd}}">
+                DVD {{currentDvd.dvd}} tracklisting
+              </button>
+            </h3>
+          </div>
+          
+          <div id="collapse_{{currentDvd.dvd}}" class="collapse" attr.aria-labelledby="heading_{{currentDvd.dvd}}" data-parent="#accordion">
+            <div class="card-body custom-card-body">
+                <div *ngFor="let song of currentDvd.songlist">
+                  
+                    <p class="songs">{{song}}</p>
+                  </div>
+            </div>
+          </div>
+        </div>
+    <!-- <p>DVD {{currentDvd.dvd}}</p>
     <div *ngFor="let song of currentDvd.songlist">
       <p class="songs">{{song}}</p>
     </div>
-  </div>
-  <div *ngIf="details.version[0].coverArt === true">
-
-      <img src="/assets/images/fullArtwork/{{details.version[0].detailId}}.jpg">
+  <!-- </div> -->
+</div> 
+</div>
+  
+  <div *ngIf="details.version[0].coverArt === true" class="d-flex flex-column justify-content-center text-center coverart-container p-0 pt-4 col-10">
+      <h3 class="mb-0">Cover Art</h3>
+      <small class="mb-2">Right click on image to save</small>
+      <div class="justify-content-center">
+      <img class="full-cover" src="/assets/images/fullArtwork/{{details.version[0].detailId}}.jpg">
       <div *ngIf="details.version[0].detailId === 2">
-          <img src="/assets/images/fullArtwork/2b.jpg">
-          <img src="/assets/images/fullArtwork/2c.jpg">
-          <img src="/assets/images/fullArtwork/2d.jpg">
-
+          <img class="full-cover" src="/assets/images/fullArtwork/2b.jpg">
+          <img class="full-cover" src="/assets/images/fullArtwork/2c.jpg">
+          <img class="full-cover" src="/assets/images/fullArtwork/2d.jpg">
+        </div>
       </div>
     </div>
 

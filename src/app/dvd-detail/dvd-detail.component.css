@@ -1,19 +1,73 @@
-/* @font-face {
-  font-family: bruceWriting;
-  src: url(../../assets/fonts/BruceWriting.ttf);
-} */
+h2{
+  font-family: 'adler';
+}
 
-/* *{
-  font-family: 'adler';
-} */
-/* .detail-page{
-  width: 100%;
-} */
+h3{
+  font-family: 'bruceWriting';
+}
+
+p{
+  margin: 10px 0;
+}
+
+button{
+  font-family:'bruceWriting';
+  color: white;
+  background: none;
+  font-size: 3.5vh;
+}
+
+button:hover{
+  font-family:'bruceWriting';
+  color: white;
+  background-color:none;
+  font-size: 3.5vh;
+}
+
+.custom-tracklisting-label{
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px dashed white;
+  margin-top: 20px;
+
+}
+
+.detail-column{
+  margin-top: 5px;
+}
+.capture-container{
+  margin-top: 40px;
+  border: 1px dashed white;
+  padding-top: 25px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.cover-art{
+  height: 400px;
+  border: 1px dashed white;
+}
+
+.custom-card-body{
+  padding-top: 0;
+}
 .songs{
-  font-family: 'adler';
-  font-size: 3vh;
+  /* font-family: 'adler';
+  font-size: 3vh; */
 }
 
 .capture{
+  border: 1px solid white;
+  width: 200px;
+}
+
+.coverart-container{
+  margin: 40px 0;
+  border: 1px dashed white;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.full-cover{
+  width: 90%;
+  height: 90%;
+  margin-bottom: 40px;
   border: 1px solid white;
 }
