@@ -1,7 +1,7 @@
-<div class="container justify-content-start mt-5" *ngFor="let details of selectedDvd">
+<div class="container justify-content-start" *ngFor="let details of selectedDvd">
       <div class="d-flex flex-row justify-content-start" >
         <div class="cover-art-container" *ngIf="details.version[0].coverArt === true">
-          <img class="cover-art" src="/assets/images/covers/{{details.version[0].detailId}}.jpg">
+          <img class="cover-art" src="https://res.cloudinary.com/rgelbman/image/upload/brucedvds/images/covers/{{details.version[0].detailId}}.jpg">
         </div>
         <div class="detail-column col-5">
           <h2>{{details.version[0].name}}</h2>
@@ -30,7 +30,7 @@
   <h3>Screen Captures</h3>
     <div class="d-flex flex-wrap justify-content-around text-center">    
       <div *ngFor="let capture of details.version[0].capture">
-        <img class="capture" src="/assets/images/capture/{{capture.filename}}">
+        <img class="capture" src="https://res.cloudinary.com/rgelbman/image/upload/brucedvds/images/capture/{{capture.filename}}">
         <p>{{capture.caption}}</p>
       </div>
     </div>
@@ -67,11 +67,11 @@
       <h3 class="mb-0">Cover Art</h3>
       <small class="mb-2">Right click on image to save</small>
       <div class="justify-content-center">
-      <img class="full-cover" src="/assets/images/fullArtwork/{{details.version[0].detailId}}.jpg">
+      <img class="full-cover" src="https://res.cloudinary.com/rgelbman/image/upload/brucedvds/images/fullArtwork/{{details.version[0].detailId}}.jpg">
       <div *ngIf="details.version[0].detailId === 2">
-          <img class="full-cover" src="/assets/images/fullArtwork/2b.jpg">
-          <img class="full-cover" src="/assets/images/fullArtwork/2c.jpg">
-          <img class="full-cover" src="/assets/images/fullArtwork/2d.jpg">
+          <img class="full-cover" src="https://res.cloudinary.com/rgelbman/image/upload/brucedvds/images/fullArtwork/2b.jpg">
+          <img class="full-cover" src="https://res.cloudinary.com/rgelbman/image/upload/brucedvds/images/fullArtwork/2c.jpg">
+          <img class="full-cover" src="https://res.cloudinary.com/rgelbman/image/upload/brucedvds/images/fullArtwork/2d.jpg">
         </div>
       </div>
     </div>

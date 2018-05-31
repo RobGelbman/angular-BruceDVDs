@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { DvdService } from "../services/dvd.service";
 import {PaginationInstance} from 'ngx-pagination';
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'app-dvd-index',
@@ -31,7 +32,7 @@ export class DvdIndexComponent implements OnInit {
     screenReaderCurrentLabel: `You're on page`
 };
 
-  constructor(private dvd: DvdService) { }
+  constructor(private dvd: DvdService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.dvd.getList()
