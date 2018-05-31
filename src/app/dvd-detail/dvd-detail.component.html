@@ -1,4 +1,4 @@
-<div class="container justify-content-start" *ngFor="let details of selectedDvd">
+<div class="container justify-content-start mt-5" *ngFor="let details of selectedDvd">
       <div class="d-flex flex-row justify-content-start" >
         <div class="cover-art-container" *ngIf="details.version[0].coverArt === true">
           <img class="cover-art" src="/assets/images/covers/{{details.version[0].detailId}}.jpg">
@@ -77,4 +77,4 @@
     </div>
 
 </div>
-<!-- <app-comment-form></app-comment-form> -->
+<app-comment-form></app-comment-form>

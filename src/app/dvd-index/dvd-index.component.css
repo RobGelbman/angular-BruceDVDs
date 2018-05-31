@@ -1,5 +1,6 @@
 .index{
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
   
 }
 
@@ -14,12 +15,12 @@
   display:inline-block;
   padding: 5px;
   margin: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background: none;
 
 }
 
 .dvd-list-title__active{
-  border: 1px solid white;
+  border: 1px dashed white;
   font-size: 20px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.7);
@@ -33,7 +34,9 @@
   margin: 15px 0;
 }
 
-
+body{
+  background: url("../../assets/images/backgrounds/2823_bruce_springsteen.jpg")
+}
 
 h1{
   font-family: 'adler';
@@ -41,6 +44,8 @@ h1{
 
 h3{
   font-family: 'bruceWriting';
+  margin-top: 10px;
+  text-decoration: underline;
 }
 
 a{

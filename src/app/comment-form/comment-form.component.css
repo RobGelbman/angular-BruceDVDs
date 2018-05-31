@@ -1,0 +1,36 @@
+.container{
+
+  margin-bottom:50px;
+}
+.comment-form-container{
+  border: 1px dashed white;
+}
+
+.error{
+  color: red;
+}
+
+input{
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: 1px dashed white;
+  width: 70%;
+}
+
+button{
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: 1px dashed white;
+  border-radius: 10px;
+}
+
+button:hover{
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+  border: 1px dashed black;
+  border-radius: 10px;
+}
+
+h3{
+  font-family: 'bruceWriting';
+}

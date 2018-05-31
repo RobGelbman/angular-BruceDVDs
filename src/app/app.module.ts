@@ -14,6 +14,7 @@ import { DvdDetailComponent } from './dvd-detail/dvd-detail.component';
 import { CommentFormComponent } from './comment-form/comment-form.component';
 import { HomeComponent } from './home/home.component';
 import { LoginSignupComponent } from './login-signup/login-signup.component';
+import { IndividualCommentComponent } from './individual-comment/individual-comment.component';
 
 
 
@@ -24,7 +25,8 @@ import { LoginSignupComponent } from './login-signup/login-signup.component';
     DvdDetailComponent,
     CommentFormComponent,
     HomeComponent,
-    LoginSignupComponent
+    LoginSignupComponent,
+    IndividualCommentComponent
   ],
   imports: [
     BrowserModule,

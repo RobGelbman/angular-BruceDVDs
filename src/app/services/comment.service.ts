@@ -19,7 +19,7 @@ export class CommentService {
   }
 
   postComment(comment) {
-    return this.currentComment = this.http.post(`${environment.BASE_URL}/comments/submitComment`, comment, )
+    return this.currentComment = this.http.post(`${environment.BASE_URL}/comments/submitComment`, comment )
     .map(res => res.json())
     .catch(this.handleError);
   }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterLinkActive } from '@angular/router';
 import { SessionService } from "./services/session.service";
 import { Observable } from 'rxjs/Rx';
 

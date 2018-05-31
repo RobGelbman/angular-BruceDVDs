@@ -1,0 +1,25 @@
+.logo{
+  height: 75px;
+}
+
+.dropdown-menu{
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  border: 1px dashed white;
+}
+
+.dropdown-item{
+  color:white;
+}
+
+.dropdown-item:hover{
+  color:black;
+}
+
+/* .header-container{
+  background-color: rgba(0, 0, 0, 0.7);
+} */
+
+.nav-link{
+  background: black;
+}

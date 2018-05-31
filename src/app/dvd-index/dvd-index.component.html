@@ -1,18 +1,18 @@
-<div class="index">
-<h1> DVD list </h1>
+<div class="index pt-5 pb-5 col-10">
+<h1> Browse DVDs </h1>
 
 <div class="columns">
   
-  <div class="column">
+  <!-- <div class="column">
     Show: 
     <a class="dvd-per-page" [routerLink]="" (click)="setItemsPerPage(10)">10</a> 
       <a class="dvd-per-page" [routerLink]="" (click)="setItemsPerPage(25)">25</a> 
         <a class="dvd-per-page" [routerLink]="" (click)="setItemsPerPage(50)">50</a>
         per Page
-  </div>
+  </div> -->
 </div>
     
-      <div class="custom-pagination" *ngFor="let dvd of dvds | paginate: config">
+      <div class="custom-pagination index-container" *ngFor="let dvd of dvds | paginate: config">
         <h3 *ngIf = firstTime(dvd.dvdType)>{{dvd.dvdType}}</h3>
         <div class="dvd-list__title" [ngClass]="{'dvd-list-title__active' : dvd.isOpen}" (click)="showVersions(dvd)">
         <p *ngIf = !formatWithDate(dvd.dvdType) >{{dvd.dvdLocation.venue}}</p>
