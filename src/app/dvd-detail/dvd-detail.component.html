@@ -3,6 +3,9 @@
         <div class="cover-art-container" *ngIf="details.version[0].coverArt === true">
           <img class="cover-art" src="https://res.cloudinary.com/rgelbman/image/upload/brucedvds/images/covers/{{details.version[0].detailId}}.jpg">
         </div>
+        <div class="cover-art-container" *ngIf="details.version[0].coverArt === false">
+          <img class="cover-art" src="https://res.cloudinary.com/rgelbman/image/upload/brucedvds/images/covers/no-cover-available.jpg">
+        </div>
         <div class="detail-column col-5">
           <h2>{{details.version[0].name}}</h2>
           <p>{{details.version[0].tracklist.length}} DVD</p>
@@ -35,7 +38,7 @@
       </div>
     </div>
 </div>
-<div id="accordion" class="text-center col-10 mt-5 mlr-0 p-0">
+<div id="accordion" class="text-center tracklisting-container col-10 mt-5 mlr-0 p-0">
   <div *ngFor="let currentDvd of details.version[0].tracklist">
       <div class="card custom-tracklisting-label">
           <div class="card-header pt-2 pb-0" id="heading_{{currentDvd.dvd}}">
@@ -77,4 +80,6 @@
     </div>
 
 </div>
+<div  class="comment-container">
 <app-comment-form></app-comment-form>
+</div>

@@ -1,0 +1,25 @@
+h2{
+  font-family: "adler";
+}
+
+.login-signup-boxes{
+  border: 1px dashed white;
+  padding: 20px 50px;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin: 0px 25px;
+}
+
+input{
+  background: black;
+  color: white;
+  border-style: solid;
+  padding: 5px 10px;
+}
+
+input:focus{
+  outline:none;
+}
+
+.loginSignup-Container{
+  margin-top: 150px;
+}

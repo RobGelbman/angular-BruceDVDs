@@ -1,3 +1,5 @@
+
+
 <div class="index pt-5 pb-5 col-10">
 <h1> Browse DVDs </h1>
 
@@ -13,7 +15,7 @@
 </div>
     
       <div class="custom-pagination index-container" *ngFor="let dvd of dvds | paginate: config">
-        <h3 *ngIf = firstTime(dvd.dvdType)>{{dvd.dvdType}}</h3>
+        <h3 *ngIf = dvd.first>{{dvd.dvdType}}</h3>
         <div class="dvd-list__title" [ngClass]="{'dvd-list-title__active' : dvd.isOpen}" (click)="showVersions(dvd)">
         <p *ngIf = !formatWithDate(dvd.dvdType) >{{dvd.dvdLocation.venue}}</p>
         <p *ngIf = formatWithDate(dvd.dvdType)>{{ dvd.dvdDate}} - {{dvd.dvdLocation.venue}} - {{dvd.dvdLocation.city}} - {{dvd.dvdLocation.state}} </p>

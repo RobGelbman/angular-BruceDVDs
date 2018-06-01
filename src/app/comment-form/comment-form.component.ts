@@ -58,19 +58,25 @@ export class CommentFormComponent implements OnInit {
     
   }
 
-  successCb(user) {
-    this.user = user;
-    this.error = null;
-    
-    
-  }
-
   showComments(){
     this.currentDVD = Number(JSON.parse(sessionStorage.getItem('currentDVD')))
     this.comment.getComments(this.currentDVD)
       .subscribe((comments) => {
+        comments.forEach(function(comment){
+          let user = JSON.parse(sessionStorage.getItem('mySession'));
+          if (user !== null && comment.userId === user._id){
+          comment["canDelete"] = true; 
+          } else {
+            comment["canDelete"] = false;
+          }
+          });
         this.comments = comments;
       });
   }
 
+  removeComment (id) {
+    this.comments = this.comments.filter(
+      (comment) => comment._id !== id
+    );
+  }
 }

@@ -16,20 +16,27 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/dvd">All</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Compilation</a>
-                <a class="dropdown-item" href="#">Concert</a>
-                <a class="dropdown-item" href="#">Documentary</a>
-                <a class="dropdown-item" href="#">Rehearsal</a>
-                <a class="dropdown-item" href="#">Soundcheck</a>
-                <a class="dropdown-item" href="#">TV Appearances</a>
+                <a class="dropdown-item" href="/dvd/Compilation">Compilation</a>
+                <a class="dropdown-item" href="/dvd/Concert">Concert</a>
+                <a class="dropdown-item" href="/dvd/Documentary">Documentary</a>
+                <a class="dropdown-item" href="/dvd/Rehearsal">Rehearsal</a>
+                <a class="dropdown-item" href="/dvd/Soundcheck">Soundcheck</a>
+                <a class="dropdown-item" href="/dvd/TV%20Appearance">TV Appearances</a>
               </div>
             </li>
           <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
             <a class="nav-link" [routerLink]="['/dvd']">Search</a>
           </li>
+          <div *ngIf="user == null">
           <li class="nav-item">
-            <a class="nav-link" href="#">Login/Signup</a>
+            <a class="nav-link" href="/login-signup">Login/Signup</a>
           </li>
+          </div>
+          <div *ngIf="user !== null">
+            <li class="nav-item">
+              <a class="nav-link" (click)="logout()">Logout</a>
+            </li>
+            </div>
         </ul>
       </div>
     </nav>

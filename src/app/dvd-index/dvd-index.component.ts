@@ -35,10 +35,35 @@ export class DvdIndexComponent implements OnInit {
   constructor(private dvd: DvdService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.dvd.getList()
-      .subscribe((dvds) => {
-        this.dvds = dvds;
+
+    // console.log(this.isEmpty(this.activatedRoute.params.browseType))
+    this.activatedRoute.params.subscribe(browseType => {
+      // console.log(browseType.hasOwnProperty('type'))
+      if(browseType.hasOwnProperty('type')){
+      
+        this.dvd
+        .getType(browseType.type)
+        .subscribe(dvds => {
+          this.dvds = dvds;
+          
+        });
+      }else {
+        this.dvd.getList()
+        .subscribe((dvds) => {
+          let currentDvdType ="";
+          dvds.forEach(function(dvd){            
+            if (dvd.dvdType !== currentDvdType){
+            dvd["first"] = true;
+            currentDvdType = dvd.dvdType
+            } else {
+              dvd["first"] = false;
+            }
+            });
+          this.dvds = dvds;
       });
+      }
+    });
+    
 
   }
 
@@ -81,4 +106,5 @@ export class DvdIndexComponent implements OnInit {
     dvd.isOpen = !dvd.isOpen;
     this.currentDvdType = "";
   }
+
 }

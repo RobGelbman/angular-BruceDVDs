@@ -60,7 +60,7 @@ button:hover{
 }
 
 .coverart-container{
-  margin: 40px 0;
+  
   border: 1px dashed white;
   background-color: rgba(0, 0, 0, 0.7);
 }
@@ -70,4 +70,12 @@ button:hover{
   height: 90%;
   margin-bottom: 40px;
   border: 1px solid white;
+}
+
+.tracklisting-container{
+  margin-bottom: 40px;
+}
+
+.comment-container{
+  margin-top: 40px;
 }

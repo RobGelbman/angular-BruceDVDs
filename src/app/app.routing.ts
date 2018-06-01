@@ -10,6 +10,7 @@ export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home',  component: HomeComponent },
   { path: 'dvd', component: DvdIndexComponent },
+  { path: 'dvd/:type', component: DvdIndexComponent },
   { path: 'dvdDetail/:id', component: DvdDetailComponent },
   { path: 'comment', component: CommentFormComponent },
   { path: 'login-signup', component: LoginSignupComponent }

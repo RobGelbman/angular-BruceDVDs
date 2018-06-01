@@ -2,6 +2,7 @@
 
   <div class="comment-form-container text-center col-10">
     <h3 class="mt-2"> Comments </h3>
+    <div *ngIf="user !== null">
     <form class="mt-0">
       <small> Leave a comment </small><br>
       <input type="text" [(ngModel)]="commentForm.comment" name="comment"/>
@@ -9,9 +10,10 @@
     </form>
     <p class="error"> {{ error }} </p>
   </div>
+  </div>
 
   <div *ngFor="let comment of comments">
-    <app-individual-comment [oneComment]=comment></app-individual-comment>
+    <app-individual-comment [oneComment]="comment" (onDelete)="removeComment($event)"></app-individual-comment>
   </div>
 
 </div>

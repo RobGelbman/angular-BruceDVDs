@@ -1,4 +1,43 @@
-<form>
+<div class="loginSignup-Container col-10">
+  <div class="d-flex justify-content-center row">
+    <div class="column login-signup-boxes">
+      <form>
+          <h2> Login</h2>
+          <input type="text" [(ngModel)]="formLogin.username" name="username"/><br>
+          <label> Username </label>
+          <br>
+          <input type="password" [(ngModel)]="formLogin.password" name="password"/><br>
+          <label> Password </label>
+          <br>
+          <div class="d-flex justify-content-center">
+          <button (click)="login()"> submit </button>
+        </div>         
+        </form>
+        <p class="error"> {{ error }} </p>
+    </div>
+    <div class="column login-signup-boxes">
+        <form>
+            <h2> Signup</h2>
+            <input type="text" [(ngModel)]="formSignup.username" name="username"/><br>
+            <label> Username </label>
+            <br>
+            <input type="text" [(ngModel)]="formSignup.email" name="email"/><br>
+            <label> Email </label>
+            <br>
+            <input type="password" [(ngModel)]="formSignup.password" name="password"/><br>
+            <label> Password </label>
+            <br>
+            <div class="d-flex justify-content-center">
+            <button (click)="signup()"> submit </button>
+          </div>         
+          </form>
+          <p class="error"> {{ error }} </p>
+      </div>
+  </div>
+</div>
+
+
+<!-- <form>
     <h2> Login or Signup </h2>
     <label> Username </label>
     <input type="text" [(ngModel)]="formInfo.username" name="username"/>
@@ -10,4 +49,4 @@
     <button (click)="signup()"> signup </button>
     <button (click)="logout()"> logout </button>
   </form>
-  <p class="error"> {{ error }} </p>
+  <p class="error"> {{ error }} </p> -->

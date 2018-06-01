@@ -1,6 +1,8 @@
+
 .index{
   text-align: center;
   background-color: rgba(0, 0, 0, 0.7);
+  /* background: src("../../assets/images/backgrounds/2823_bruce_springsteen.jpg") */
   
 }
 
@@ -34,9 +36,7 @@
   margin: 15px 0;
 }
 
-body{
-  background: url("../../assets/images/backgrounds/2823_bruce_springsteen.jpg")
-}
+
 
 h1{
   font-family: 'adler';

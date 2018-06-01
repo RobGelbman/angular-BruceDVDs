@@ -1,0 +1,18 @@
+.individual-comment-container{
+  background-color: rgba(34, 29, 29, 0.7);
+  color: white;
+  border-radius: 15px;
+  border: 1px dashed white;
+}
+
+.comment-container{
+  margin: 20px 0;
+}
+
+.name{
+  font-size: 2.5vh;
+  display:inline-block;
+  border-bottom: 1px solid white;
+  padding-bottom: 0px;
+  margin-bottom: 5px;
+}

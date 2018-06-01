@@ -1,7 +1,16 @@
-<div class="name">
-    {{oneComment.username}}
+<div class="d-flex justify-content-center comment-container col-10">
+<div class="individual-comment-container col-9">
+    <div class="name">
+        {{oneComment.username}}
+    </div>
+    <div class="comment">
+    <p class="mb-0">{{oneComment.comment}}</p>
+    <div *ngIf="oneComment.canDelete">
+        <small> {{oneComment.created_at|date: 'LLL dd, yyyy hh:mm a'}} <a [routerLink]="" (click)="deleteComment()">Delete comment</a></small>
+    </div>
+    <div *ngIf="!oneComment.canDelete">
+        <small> {{oneComment.created_at|date: 'LLL dd, yyyy hh:mm a'}}</small>
+    </div>
+    </div>
 </div>
-<div class="comment-container">
-<p class="mb-0">{{oneComment.comment}}</p>
-<small> {{oneComment.created_at|date: 'LLL dd, yyyy hh:mm a'}}</small>
 </div>

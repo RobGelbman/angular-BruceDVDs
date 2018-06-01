@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLinkActive } from '@angular/router';
 import { SessionService } from "./services/session.service";
 import { Observable } from 'rxjs/Rx';
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/Rx';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   
   formInfo = {
     username: '',
@@ -19,6 +19,11 @@ export class AppComponent {
   error: string;
 
   constructor(private session: SessionService) {}
+
+  ngOnInit(){
+    this.user = JSON.parse(sessionStorage.getItem('mySession'));
+    // console.log(this.user)
+  }
   
   login() {
     this.session.login(this.formInfo)      

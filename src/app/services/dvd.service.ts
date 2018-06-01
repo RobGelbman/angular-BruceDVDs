@@ -17,6 +17,11 @@ export class DvdService {
       .map((res) => res.json());
   }
 
+  getType(type) {
+    return this.http.get(`${environment.BASE_URL}/api/dvds/${type}`)
+      .map((res) => res.json());
+  }
+
   getCount() {
     return this.http.get(`${environment.BASE_URL}/api/dvds/count`)
       .map((res) => res.json());

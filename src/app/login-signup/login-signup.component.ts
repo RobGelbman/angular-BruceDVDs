@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from "../services/session.service";
 import { Observable } from 'rxjs/Rx';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login-signup',
@@ -9,39 +10,48 @@ import { Observable } from 'rxjs/Rx';
 })
 export class LoginSignupComponent implements OnInit {
   
-  formInfo = {
+  formLogin = {
     username: '',
+    password: ''
+  };
+
+  formSignup = {
+    username: '',
+    email: '',
     password: ''
   };
 
   user: any;
   error: string;
 
-  constructor(private session: SessionService) {}
+  constructor(private session: SessionService, private router: Router) {}
 
   ngOnInit() {
+    this.user = JSON.parse(sessionStorage.getItem('mySession'));
   }
 
   login() {
-    this.session.login(this.formInfo)      
+    this.session.login(this.formLogin)      
       .subscribe(
         (user) => this.successCb(user),
         (err) => this.errorCb(err)
       );
     
-    this.formInfo.username ="";
-    this.formInfo.password ="";
+    this.formLogin.username ="";
+    this.formLogin.password ="";
+    // this.router.navigate(['/dvd']);
   }
 
   signup() {
-    this.session.signup(this.formInfo)
+    this.session.signup(this.formSignup)
       .subscribe(
         (user) => this.successCb(user),
         (err) => this.errorCb(err)
       );
 
-    this.formInfo.username ="";
-    this.formInfo.password ="";
+    this.formSignup.username ="";
+    this.formSignup.email ="";
+    this.formSignup.password ="";
   }
 
   logout() {
